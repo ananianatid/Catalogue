@@ -104,39 +104,49 @@ class ProductResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label("Nom")
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
+                    Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('price')
+                    Tables\Columns\TextColumn::make('price')
+                    ->label("Prix")
                     ->money()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('stock')
+                    Tables\Columns\TextColumn::make('stock')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('discount_percent')
+                    Tables\Columns\TextColumn::make('discount_percent')
+                    ->label("% promotion")
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('category_id')
+                    Tables\Columns\TextColumn::make('category_id')
+                    ->label("Categorie")
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('brand_id')
+                    Tables\Columns\TextColumn::make('brand_id')
+                    ->label("Marque")
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\IconColumn::make('is_active')
+                    Tables\Columns\IconColumn::make('is_active')
+                    ->label("En vente")
                     ->boolean(),
-                Tables\Columns\IconColumn::make('is_featured')
+                    Tables\Columns\IconColumn::make('is_featured')
+                    ->label("En promotion")
                     ->boolean(),
-                Tables\Columns\TextColumn::make('visibility')
+                    Tables\Columns\TextColumn::make('visibility')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('created_at')
+                    Tables\Columns\TextColumn::make('created_at')
+                    ->label("Creation")
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
+                    Tables\Columns\TextColumn::make('updated_at')
+                    ->label("Mise a jour")
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('deleted_at')
+                    Tables\Columns\TextColumn::make('deleted_at')
+                    ->label("Suprime a ")
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
