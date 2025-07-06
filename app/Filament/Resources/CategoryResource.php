@@ -27,8 +27,8 @@ class CategoryResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('description')
                     ->required(),
-                Forms\Components\FileUpload::make('image_url')
-                    ->image(),
+                Forms\Components\TextInput::make('image_url')
+
             ]);
     }
 
@@ -37,10 +37,12 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('nom')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image_url'),
+                Tables\Columns\ImageColumn::make('image_url')
+                ->label('Image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
