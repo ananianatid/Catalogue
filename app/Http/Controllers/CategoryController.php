@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        return "category index" ;
+        $categories = Category::all();
+        return $categories ;
     }
     public function show(Category $category){
         return $category ;

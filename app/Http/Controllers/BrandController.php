@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class BrandController extends Controller
 {
     public function index(){
-        return "brand index" ;
+        $brands  = Brand::all();
+        return $brands ;
     }
     public function show(Brand $brand){
         return $brand ;
