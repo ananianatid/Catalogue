@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SearchRequest extends FormRequest
+class ProductFilterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,10 +20,12 @@ class SearchRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
-    {
-        return [
-            'name' => ['nullable', 'string', 'max:255'],
-        ];
-    }
+        {
+            return [
+                'brand' => ['nullable', 'numeric', 'exists:brands,id'],
+                'category' => ['nullable', 'numeric', 'exists:categories,id'],
+                'price_order' => ['nullable', 'in:asc,desc'], // <-- correspond au formulaire
+            ];
+        }
 
 }

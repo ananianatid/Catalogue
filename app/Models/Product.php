@@ -21,4 +21,9 @@ class Product extends Model
         'images' => 'json', // ou 'array' fonctionne aussi
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug'; // or 'slug' if you use slugs instead
+    }
+
 }

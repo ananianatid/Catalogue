@@ -26,6 +26,7 @@
                 tabindex="0"
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                 <li><a href="{{ route('index') }}" >Acceuil</a></li>
+                <li><a href="{{ route('discount') }}" >Promotions</a></li>
                 <li><a href="{{ route('index.brand') }}" >Nos marques</a></li>
                 <li><a href="{{ route('index.category') }}">Nos categories de produits</a></li>
                 <li><a href="{{ route('about') }}" >A propos de nous </a></li>

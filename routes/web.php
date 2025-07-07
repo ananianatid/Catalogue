@@ -23,6 +23,7 @@ Route::get('/products',[ProductController::class, 'index'])->name("index.product
 Route::get('/product/{product}',[ProductController::class, 'show'])->name("show.product");
 
 Route::get('/search',[SearchController::class, 'index'])->name("search");
+Route::get('/promotions',[GeneralController::class, 'discount'])->name("discount");
 
 Route::get('/about',function(){
     return view('about');
