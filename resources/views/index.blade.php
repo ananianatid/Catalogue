@@ -1,40 +1,39 @@
 @extends('base')
-@section('title', 'Be market ')
+@section('title', 'Catalogue')
 @section('content')
-{{-- {{ dd($results) }} --}}
 <div>
 
-<div class="w-full">
-    <div class="my-3">
-        <p class="text-4xl text-gray-900 dark:text-white">A l'affiche !</p>
+    <div class="w-full bg-slate-200 p-2">
+        <div class="my-3">
+            <p class="text-3xl text-slate-900 dark:text-white">A l'affiche !</p>
+        </div>
+
+        <div class="carousel carousel-center bg-slate-400 rounded-box max-w-full space-x-4 p-4">
+            @foreach ($showcase as $product)
+                @include('shared.showcase_card', ['product' => $product])
+            @endforeach
+        </div>
+
+
     </div>
 
-<div class="carousel carousel-center bg-neutral rounded-box max-w-full space-x-4 p-4">
-    @foreach ($showcase as $product)
-        @include('shared.showcase_card', ['product' => $product])
-    @endforeach
-</div>
-
-
-</div>
 
 
 
-
-    <div class="">
-        <div class="flex justify-between items-center my-4 ">
-            <p class="text-3xl text-gray-900 dark:text-white">Nos produits</p>
+    <div class="p-2 bg-slate-100">
+        {{-- <div class="flex justify-between items-center my-4 ">
+            <p class="text-2xl text-gray-900 dark:text-white">Nos produits</p>
             <a href="{{ route('index.product') }}">
-                <button class="btn btn-soft btn-success">
+                <button class="btn btn-soft ">
                     Voir tout
                 </button>
             </a>
-        </div>
+        </div> --}}
 
         @foreach ($results as $result )
             <div class="w-full">
                 <div class="flex justify-between items-center my-3 ">
-                    <p class="text-3xl text-gray-900 dark:text-white">{{ $result['brand']->name }}</p>
+                    <p class="text-2xl font-bold text-steal-900 dark:text-white">{{ $result['brand']->name }}</p>
                     <a href="{{ route('show.brand',['brand'=>$result['brand']]) }}">
                         <button class="btn btn-soft btn-accent">
                             Voir tout

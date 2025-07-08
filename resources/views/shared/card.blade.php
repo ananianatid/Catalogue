@@ -3,7 +3,7 @@ $product = $product ?? null;
 ?>
 
 @if($product)
-<div class="card card-side bg-base-100 shadow-sm w-full h-fit my-1 flex items-center p-1">
+<div class="card card-side bg-white shadow-sm w-full h-fit my-2 flex items-center p-1">
     <figure class="aspect-[3/4] h-48 flex-shrink-0 overflow-hidden rounded-md relative">
         <img
             src="{{ $product->images ? asset('storage/'.$product->images[0]) : asset('storage/uploads/images/no_visual.png') }}"
@@ -14,16 +14,16 @@ $product = $product ?? null;
 
     <div class="card-body flex flex-col justify-between py-2 px-2">
         <div>
-            <h2 class="card-title text-base sm:text-lg leading-tight">{{ $product->name }}</h2>
+            <h2 class="card-title text-base sm:text-base leading-tight">{{ $product->name }}</h2>
             <div class="mt-1 flex flex-col gap-1">
-                <span class="badge badge-primary badge-outline text-xs">
+                <span class="badge badge-ghost badge-outline text-xs">
                     {{ optional($product->brand)->name }}
                 </span>
-                <span class="badge badge-secondary badge-outline text-xs">
+                <span class="badge badge-ghost badge-outline text-xs">
                     {{ optional($product->category)->name }}
                 </span>
                 @if ($product->discount_percent > 0)
-                    <div class="badge badge-soft badge-warning"> - {{ $product->discount_percent }}%</div>
+                    <div class="badge badge-soft badge-error text-xs"> - {{ $product->discount_percent }}%</div>
                 @endif
             </div>
         </div>
