@@ -13,7 +13,7 @@ $info = $brand ?? $category;
   </figure>
   <div class="card-body items-center text-center">
     <h2 class="card-title">{{ $info->name }}</h2>
-    <p>{{ $info->description }}</p>
+    {{-- <p>{{ $info->description }}</p> --}}
     <div class="card-actions">
       <button class="btn btn-primary">Voir</button>
     </div>
