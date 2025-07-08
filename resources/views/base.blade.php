@@ -14,9 +14,9 @@
             color: #172554;
         }
     </style>
-<body class="p-2">
+<body class="p-2 flex flex-col bg-pink-50">
     <nav>
-        <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar bg-base-100 shadow-sm mb-2">
         <div class="navbar-start">
             <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="navbar-center">
-            <a class="btn btn-ghost text-xl" href="{{ route('index') }}">Be market</a>
+            <a class="btn btn-ghost text-xl" href="{{ route('index') }}">Company market</a>
         </div>
         <div class="navbar-end">
             <a href="{{ route('search') }}">
@@ -45,7 +45,7 @@
         </div>
         </div>
     </nav>
-    <div class="container pt-2">
+    <div class="container lg:w-3/4 mx-auto ">
         @yield('content')
     </div>
 

@@ -13,7 +13,6 @@ class GeneralController extends Controller
             ->where('is_active', '1')
             ->where('is_featured', '1')
             ->inRandomOrder()
-            ->limit(5)
             ->get();
 
         $brandNames = ['Apple', 'Samsung', 'JBL', 'Nintendo'];

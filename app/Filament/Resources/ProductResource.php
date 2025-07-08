@@ -80,9 +80,9 @@ class ProductResource extends Resource
                     ->default("public")
                     ->hidden()
                     ->required(),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\MarkdownEditor::make('description')
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('tech_sheet')
+                Forms\Components\MarkdownEditor::make('tech_sheet')
                     ->columnSpanFull(),
                 // Forms\Components\Textarea::make('images')
                 //     ->columnSpanFull(),

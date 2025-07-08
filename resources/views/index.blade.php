@@ -3,39 +3,49 @@
 @section('content')
 {{-- {{ dd($results) }} --}}
 <div>
-    <div class="m-3">
-        <h1 class="text-xl" >Showcase</h1>
-        @foreach ($showcase as $product )
-        <p>{{ $product->name }}</p>
-        @endforeach
+
+<div class="w-full">
+    <div class="my-3">
+        <p class="text-4xl text-gray-900 dark:text-white">A l'affiche !</p>
     </div>
-    <div class="m-3 border-2 p-1">
-        <div class="border m-1 p-1">
-            <h1 class="text-xl">Nos produits</h1>
-            <a href="{{ route('index.product') }}">voir tout</a>
+
+<div class="carousel carousel-center bg-neutral rounded-box max-w-full space-x-4 p-4">
+    @foreach ($showcase as $product)
+        @include('shared.showcase_card', ['product' => $product])
+    @endforeach
+</div>
+
+
+</div>
+
+
+
+
+    <div class="">
+        <div class="flex justify-between items-center my-4 ">
+            <p class="text-3xl text-gray-900 dark:text-white">Nos produits</p>
+            <a href="{{ route('index.product') }}">
+                <button class="btn btn-soft btn-success">
+                    Voir tout
+                </button>
+            </a>
         </div>
 
-    @foreach ($results as $result )
-        <div class="border-2 m-1 p-1">
-                <div class="border-2 m-1 p-1">
-                    <p>{{ $result['brand']->name }}</p>
-                    <a href="{{ route('show.brand',['brand'=>$result['brand']]) }}">voir</a>
+        @foreach ($results as $result )
+            <div class="w-full">
+                <div class="flex justify-between items-center my-3 ">
+                    <p class="text-3xl text-gray-900 dark:text-white">{{ $result['brand']->name }}</p>
+                    <a href="{{ route('show.brand',['brand'=>$result['brand']]) }}">
+                        <button class="btn btn-soft btn-accent">
+                            Voir tout
+                        </button>
+                    </a>
                 </div>
                 @foreach ($result['products'] as $product )
-                    <div class="border-2 m-1 p-1 ">
-                        <p>{{ $product->name }}</p>
-                        <a href="{{ route('show.product',['product'=>$product]) }}">voir</a>
-                        @if ($product->discount_percent != 0)
-                            <p class="text-red-500">-{{ $product->discount_percent }}%</p>
-                            Prix: <span class="line-through">{{ $product->price }}€</span>
-                            <p class="text-green-500">{{ $product->price - ($product->price * $product->discount_percent / 100) }}€</p>
-                        @else
-                            <p>Prix: {{ $product->price }}€</p>
-                        @endif
-                    </div>
+                    @include('shared.card', ['product' => $product])
                 @endforeach
-        </div>
-    @endforeach
+            </div>
+        @endforeach
     </div>
 </div>
 

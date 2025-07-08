@@ -2,28 +2,24 @@
 @section('title', 'Be market ')
 @section('content')
 {{-- {{ dd($results) }} --}}
-<div>
+<div class="m-3">
     <div>
-<form method="get" action="" class="flex flex-col gap-4">
-    <input
-        type="text"
-        name="name"
-        value="{{ request('name') }}"
-        placeholder="Rechercher un produit"
-        class="border p-2 rounded"
-    >
-    <button>cherhcer</button>
-</form>
-
-
+        <form method="get" action="" class="flex  gap-2 justify-between items-center">
+            {{-- Recherche par mot-clé --}}
+            <input
+                type="text"
+                name="name"
+                value="{{ request('name') }}"
+                placeholder="Rechercher un produit"
+                class="border p-2 rounded w-full"
+            >
+            <button class="btn btn-soft w-fit">cherhcer</button>
+        </form>
     </div>
-    <div class="m-3">
+
+    <div class="lg:grid lg:grid-cols-2 lg:gap-2">
         @foreach ($products as $product )
-            <div class="border-2 m-1 p-1 ">
-                <p class="text-xl">{{ $product->name }}</p>
-                <p>{{ $product->price }}</p>
-                <a href="{{ route('show.product',['product'=>$product]) }}">voir</a>
-            </div>
+            @include('shared.card', ['product' => $product])
         @endforeach
     </div>
 </div>

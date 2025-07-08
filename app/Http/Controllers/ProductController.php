@@ -74,14 +74,13 @@ class ProductController extends Controller
             'same_category_products' => $same_category_products,
         ]);
     }
-    public function discount(){
-        $asc_discount = true;
-        $desc_discount = false;
-        $products = Product::query()->where('discount_percent','!=','0')->where('is_active','1');
-        if($asc_discount == true)
-            $products = $products->orderBy('discount_percent','asc');
-        if($desc_discount == true)
-            $products = $products->orderBy('discount_percent','desc');
+    public function discount($direction = 'asc')
+    {
+        $products = Product::query()
+            ->where('discountis_percent', '>=', 0)
+            ->where('is_active', true)
+            ->orderBy('discount_percent', $direction)
+            ->get();
 
         return $products;
     }

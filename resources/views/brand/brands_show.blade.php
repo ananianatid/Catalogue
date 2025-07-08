@@ -1,17 +1,14 @@
 @extends('base')
 @section('title', 'Be market ')
 @section('content')
+        <div class="flex justify-between items-center my-4 ">
+            <p class="text-4xl text-gray-900 dark:text-white">Nos produits {{ $brand->name }}</p>
+        </div>
     @foreach ($products as $product )
-        <div class="m-1 p-1 border-2">
-        <img
-            class="object-contain border-2 border-gray-300 rounded-md h-48 w-40 shadow-sm"
-            src="{{ $product->image[0] ?? 'https://via.placeholder.com/160x192?text=No+Image' }}"
-            alt="{{ $product->name }}"
-        >
-            <p>
-                {{ $product->name }}
-            </p>
-            <a href="{{ route('show.product',['product'=>$product]) }}">voir</a>
+        <div class="">
+            @foreach ($products as $product )
+                @include('shared.card', ['product' => $product])
+            @endforeach
         </div>
     @endforeach
 @endsection
