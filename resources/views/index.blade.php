@@ -5,7 +5,7 @@
 
     <div class="w-full bg-slate-200 p-2">
         <div class="my-3">
-            <p class="text-3xl text-slate-900 dark:text-white">A l'affiche !</p>
+            <p class="text-3xl text-slate-900 ">A l'affiche !</p>
         </div>
 
         <div class="carousel carousel-center bg-slate-400 rounded-box max-w-full space-x-4 p-4">
