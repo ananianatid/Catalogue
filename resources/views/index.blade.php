@@ -33,7 +33,7 @@
         @foreach ($results as $result )
             <div class="w-full">
                 <div class="flex justify-between items-center my-3 ">
-                    <p class="text-2xl font-bold text-steal-900 dark:text-white">{{ $result['brand']->name }}</p>
+                    <p class="text-2xl font-bold text-steal-900 ">{{ $result['brand']->name }}</p>
                     <a href="{{ route('show.brand',['brand'=>$result['brand']]) }}">
                         <button class="btn btn-soft btn-accent">
                             Voir tout
