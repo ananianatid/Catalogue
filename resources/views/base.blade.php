@@ -14,10 +14,10 @@
             color: #172554;
         }
     </style>
-<body class="flex flex-col bg-white">
+<body class="flex flex-col bg-slate-100">
 
     <nav>
-        <div class="navbar bg-slate-100 shadow-sm">
+        <div class="navbar bg-slate-100 shadow-sm mb-2">
             <div class="navbar-start">
                 <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
@@ -70,25 +70,25 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
                     </svg>
 
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Be market</span>
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Catalogue</span>
                 </a>
                 <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">About</a>
+                        <a href="{{ route('about') }}" class="hover:underline me-4 md:me-6">A propos de nous </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+                        <a href="#" class="hover:underline me-4 md:me-6">Politique de confidentialite </a>
                     </li>
                     <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+                        <a href="#" class="hover:underline me-4 md:me-6">Licence</a>
                     </li>
                     <li>
-                        <a href="#" class="hover:underline">Contact</a>
+                        <a href="{{ route('about') }}" class="hover:underline">Contact</a>
                     </li>
                 </ul>
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://flowbite.com/" class="hover:underline">Be market</a>. All Rights Reserved.</span>
+            <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://flowbite.com/" class="hover:underline">Catalogue</a>. All Rights Reserved.</span>
         </div>
     </footer>
                     <script>

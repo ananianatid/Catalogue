@@ -82,7 +82,7 @@
                 {{-- Bouton WhatsApp --}}
                 <a
                     class="mt-6"
-                    href="https://wa.me/22870076829?text=Bonjour%2C%20je%20souhaite%20acheter%20ce%20produit%20%3A%20{{ urlencode(request()->getSchemeAndHttpHost() . '/produits/' . $product->slug) }}"
+                    href="https://wa.me/22870076829?text=Bonjour%2C%20je%20souhaite%20acheter%20ce%20produit%20%3A%20{{ urlencode(request()->getSchemeAndHttpHost() . '/product/' . $product->slug) }}"
                     target="_blank"
                 >
                     <button class="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition">

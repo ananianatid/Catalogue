@@ -3,12 +3,12 @@
 @section('content')
 <div>
 
-    <div class="w-full bg-slate-200 p-2">
-        <div class="my-3">
-            <p class="text-3xl text-slate-900 ">A l'affiche !</p>
-        </div>
+    <div class="my-1">
+        <p class="text-3xl font-bold text-slate-900 w-full bg-slate-300 py-3 flex items-center justify-center ">A l'affiche !</p>
+    </div>
+    <div class="w-full bg-slate-200 rounded-box p-2">
 
-        <div class="carousel carousel-center bg-slate-400 rounded-box max-w-full space-x-4 p-4">
+        <div class="carousel carousel-center bg-slate-400 rounded-box max-w-full space-x-4 p-4 ">
             @foreach ($showcase as $product)
                 @include('shared.showcase_card', ['product' => $product])
             @endforeach
