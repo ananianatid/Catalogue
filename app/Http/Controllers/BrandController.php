@@ -10,7 +10,7 @@ class BrandController extends Controller
 {
     public function index(){
         $brands  = Brand::all();
-        return view('brand.brands_index',['brands'=>$brands]) ;
+        return view('brand.index',['brands'=>$brands]) ;
     }
     public function show(Brand $brand){
         $products = Product::where('brand_id', $brand->id)
@@ -19,6 +19,6 @@ class BrandController extends Controller
             ->paginate(10);
         return $products->isEmpty()
             ? response()->json(['message' => 'No products found for this brand.'], 404)
-            : view('brand.brands_show', ['brand' => $brand, 'products' => $products]);
+            : view('brand.show', ['brand' => $brand, 'products' => $products]);
     }
 }

@@ -1,6 +1,6 @@
 @extends('base')
 
-@section('title', 'Be market')
+@section('title', 'Catalogue - '.$product->name)
 
 @section('content')
 <div class="min-h-screen flex flex-col items-start justify-start bg-gray-50 py-6">

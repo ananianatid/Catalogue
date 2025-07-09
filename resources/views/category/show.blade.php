@@ -1,5 +1,5 @@
 @extends('base')
-@section('title', 'Be market ')
+@section('title', 'voir les produits de la catégorie ' . $category->name)
 @section('content')
     @foreach ($products as $product )
         @include('shared.card', ['product' => $product])

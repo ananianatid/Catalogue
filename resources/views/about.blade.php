@@ -1,5 +1,5 @@
 @extends('base')
-@section('title', 'Be market ')
+@section('title', 'A propos de nous')
 @section('content')
 
 @endsection

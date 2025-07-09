@@ -1,5 +1,5 @@
 @extends('base')
-@section('title', 'Be market ')
+@section('title', 'Catalogue des produits')
 @section('content')
 {{-- {{ dd($results) }} --}}
 <div>

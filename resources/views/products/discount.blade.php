@@ -1,5 +1,5 @@
 @extends('base')
-@section('title', 'Be market ')
+@section('title', 'Les promotions')
 @section('content')
 <div class=" bg-slate-100">
     <div class="bg-slate-100">
