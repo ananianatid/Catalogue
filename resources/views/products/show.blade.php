@@ -52,9 +52,23 @@
                             <button class="btn btn-soft btn-secondary">{{ $product->category->name }}</button>
                         </a>
                     </div>
-
                     {{-- Infos texte --}}
-                    <p class="text-lg text-gray-700"><span class="font-semibold">Prix :</span> {{ number_format($product->price, 0, ',', ' ') }} FCFA</p>
+                    <div class="text-lg text-gray-700">
+                        <span class="font-semibold">Prix :</span>
+
+                        @if ($product->discount_percent > 0)
+                            <span class="line-through text-red-500 mx-2">
+                                {{ number_format($product->price, 0, ',', ' ') }} FCFA
+                            </span>
+                            <span class="text-green-600 font-semibold">
+                                {{ number_format($product->price * (1 - $product->discount_percent / 100), 0, ',', ' ') }} FCFA
+                            </span>
+                        @else
+                            <span class="ml-2">
+                                {{ number_format($product->price, 0, ',', ' ') }} FCFA
+                            </span>
+                        @endif
+                    </div>
                     <p class="text-lg text-gray-700"><span class="font-semibold">Stock :</span> {{ $product->stock }}</p>
                     <p class="text-sm text-gray-400 mt-2">SKU : {{ $product->sku ?? 'N/A' }}</p>
 
